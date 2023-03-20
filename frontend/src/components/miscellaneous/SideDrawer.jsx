@@ -33,6 +33,8 @@ import { getSender } from "../../config/ChatLogic";
 import { ChatState } from "../../Context/ChatProvider";
 import UserListItem from "../UserAvatar/UserListItem";
 
+// import { FontAwesomeIcon } from "font-awesome";
+
 function SideDrawer() {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
@@ -136,7 +138,7 @@ function SideDrawer() {
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button variant="ghost" onClick={onOpen}>
-            <i className="fas fa-search"></i>
+            <i class="fa fa-magnifying-glass-plus"></i>
             <Text display={{ base: "none", md: "flex" }} px={4}>
               Search User
             </Text>
@@ -211,7 +213,7 @@ function SideDrawer() {
               searchResult?.map((user) => (
                 <UserListItem
                   key={user._id}
-                  user={user}
+                  data={user}
                   handleFunction={() => accessChat(user._id)}
                 />
               ))
